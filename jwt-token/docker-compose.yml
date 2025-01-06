@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    container_name: jwt_token_db
+    environment:
+      POSTGRES_USER: postgresql
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: token
+    ports:
+      - "5432:5432"
