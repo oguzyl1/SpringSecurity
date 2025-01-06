@@ -3,10 +3,10 @@ package com.springsecurity.jwt_token.model;
 import org.springframework.security.core.GrantedAuthority;
 
 public enum Role implements GrantedAuthority {
-
     ROLE_USER("USER"),
     ROLE_ADMIN("ADMIN"),
-    ROLE_MODE("MODE");
+    ROLE_MOD("MOD"),
+    ROLE_FSK("FSK");
 
     private String value;
 

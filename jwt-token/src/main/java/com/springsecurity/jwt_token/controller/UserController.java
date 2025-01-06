@@ -38,11 +38,11 @@ public class UserController {
 
     @PostMapping("/generateToken")
     public String generateToken(@RequestBody CreateUserRequest request) {
-        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.userName(),request.password()));
+        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.username(),request.password()));
         if(authentication.isAuthenticated()) {
-            return jwtService.generateToken(request.userName());
+            return jwtService.generateToken(request.username());
         }
-        throw new UsernameNotFoundException("Invalid username:" + request.userName());
+        throw new UsernameNotFoundException("Invalid username:" + request.username());
     }
 
     @GetMapping("/user")
